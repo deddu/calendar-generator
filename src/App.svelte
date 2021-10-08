@@ -4,10 +4,22 @@
 </script>
 
 <main>
-	<label>
-		<input type=number bind:value={calw} min=1 max=31>
-		<input type=range bind:value={calw} min=1 max=31>
-	</label>
+
+<label>
+	<input type=radio bind:group={calw} value={7}>
+	weekly
+</label>
+
+<label>
+	<input type=radio bind:group={calw} value={31}>
+	monthly
+</label>
+
+<label>
+	<input type=radio bind:group={calw} value={1}>
+	daily
+</label>
+
 	<Cal start='2021-01-01' end='2022-01-01' w={calw}></Cal>
 </main>
 
