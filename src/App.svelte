@@ -1,26 +1,26 @@
 <script>
-	let calw = 7;
+	let caltype = 'weekly';
 	import Cal from './Cal.svelte';
 </script>
 
 <main>
 
 <label>
-	<input type=radio bind:group={calw} value={7}>
+	<input type=radio bind:group={caltype} value={'weekly'}>
 	weekly
 </label>
 
 <label>
-	<input type=radio bind:group={calw} value={31}>
+	<input type=radio bind:group={caltype} value={'monthly'}>
 	monthly
 </label>
 
 <label>
-	<input type=radio bind:group={calw} value={1}>
+	<input type=radio bind:group={caltype} value={'daily'}>
 	daily
 </label>
 
-	<Cal start='2021-01-01' end='2022-01-01' w={calw}></Cal>
+	<Cal start='2021-01-01' end='2022-01-01' caltype={caltype}></Cal>
 </main>
 
 <style>
