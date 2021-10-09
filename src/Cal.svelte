@@ -28,35 +28,15 @@
     
 </script>
 <style>
-	div .cal {
-		/* this will only affect <p> elements in this component */
-		color: burlywood;
-        display: grid;
-        grid-template-columns:
-            repeat(var(--days-width), minmax(10px, 1fr));
-            /* column-gap: 10px; */
-        align-items: stretch;
+	.main {
+        font-family: 'Merriweather', serif;
+        font-size: .25in;
 	}
-    div .day {
-        border:2px solid;
-        border-radius: 5%;
-        margin: .4em;
-        align-self: stretch;
-        height:10em;
-        
-    }
-    .sun, .sat {
-        background-color: gainsboro;
-    }
-    .first_of_month {
-        /* align-self:flex-end; */
-        /* grid-area: 4; */
-        background-color:blue;
-    }
+    
 </style>
-<div>
+<div class='main'>
     between {start} and {end}, there are {daysCount} days. that is {weeksCount} weeks, or {monthsCount} months
-    split by {caltype}
+    split {caltype}
     {#if caltype=='weekly'}
     <Weekview days={paddeddays}></Weekview>
     {/if}

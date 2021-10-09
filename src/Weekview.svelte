@@ -1,4 +1,4 @@
-<!-- let dates = Array.from('x'.repeat(365)).map(x=>new Date()); -->
+
 <script>
     export let days = [];
     let w=7;
@@ -8,13 +8,9 @@
 </script>
 <style>
 	div .cal {
-		/* this will only affect <p> elements in this component */
-		color: burlywood;
         display: grid;
         grid-template-columns:
         repeat(var(--days-width),  2.5in);
-        /* column-gap: 10px; */
-        /* align-items: stretch; */
 	}
     div .day {
         border:2px solid;
@@ -29,7 +25,7 @@
     .day .yy {display: none;}
 
     .sun, .sat {
-        background-color: gainsboro;
+        background-color: #eee;
     }
     .first_of_month {
         /* align-self:flex-end; */
@@ -43,13 +39,19 @@
 
     .first_of_year .yy {
         display: inherit;
-        color:lawngreen;
-        font-weight:bold;
+        font-weight:700;
     }
 
 </style>
 <div> weekview
     <div class='cal'  style="--days-width: {w}">
+    <div class='hrow'>  Sun </div>
+    <div class='hrow'>  Mon </div>
+    <div class='hrow'>  Tue </div>
+    <div class='hrow'>  Wed </div>
+    <div class='hrow'> Thu </div>
+    <div class='hrow'>  Fri </div>
+    <div class='hrow'>  Sat </div>
     {#each days as day,i }
 		<div id={i} class='day {getDow(day)} {day.date()==1?'first_of_month':''} {day.dayOfYear()==1?'first_of_year':''}'> 
             <div class='yy'>{day.format('YYYY')} </div>

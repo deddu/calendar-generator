@@ -1,5 +1,5 @@
 <script>
-	let caltype = 'weekly';
+	let caltype = 'monthly';
 	let start = '2021-01-01';
 	let end = '2022-01-01';
 
@@ -8,13 +8,15 @@
 </script>
 
 <main>
-
+<header>
+	<div>Calendar generator</div>
+	
 	<label>
-		<input type=date bind:value={start}>
+		<input type=date disabled bind:value={start}>
 		start
 	</label>
 	<label>
-		<input type=date bind:value={end}>
+		<input type=date disabled bind:value={end}>
 		end
 	</label>
 
@@ -29,10 +31,13 @@
 </label>
 
 <label>
-	<input type=radio bind:group={caltype} value={'daily'}>
+	<input type=radio disabled bind:group={caltype} value={'daily'}>
 	daily
 </label>
 
+	<button disabled>export as pdf</button>
+
+</header>
 	<Cal start={start} end={end} caltype={caltype}></Cal>
 </main>
 
@@ -43,12 +48,11 @@
 		max-width: 240px;
 		margin: 0 auto;
 	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
+	header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+	    align-items:center;
 	}
 
 	@media (min-width: 640px) {
