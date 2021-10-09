@@ -11,8 +11,10 @@
 
     export let start='2021-01-01',end='2022-01-01', caltype='weekly';
 
-    const s = dayjs(start);
-    const e = dayjs(end);
+    let  s = dayjs(start);
+    let e =  dayjs(end);
+    $: s = dayjs(start);
+    $: e =  dayjs(end);
     //start laying out days with a sunday/monday based on locale.
     let pad = s.weekday();
     let daysCount =  e.diff(s,'day');

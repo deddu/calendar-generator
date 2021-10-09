@@ -35,7 +35,7 @@
     .first_of_month {
         /* align-self:flex-end; */
         /* grid-area: 4; */
-        background-color:blue;
+        background-color:skyblue;
     }
     .first_of_month .mm  {
         font-weight:bold;

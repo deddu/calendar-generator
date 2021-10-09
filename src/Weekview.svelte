@@ -12,16 +12,17 @@
 		color: burlywood;
         display: grid;
         grid-template-columns:
-            repeat(var(--days-width), minmax(10px, 1fr));
-            /* column-gap: 10px; */
-        align-items: stretch;
+        repeat(var(--days-width),  2.5in);
+        /* column-gap: 10px; */
+        /* align-items: stretch; */
 	}
     div .day {
         border:2px solid;
         border-radius: 5%;
-        margin: .4em;
+        margin: .25in;
         align-self: stretch;
-        height:10em;
+        height:2in;
+        width: 2in;
         
     }
     .day .mm {display: none;}
@@ -33,7 +34,7 @@
     .first_of_month {
         /* align-self:flex-end; */
         /* grid-area: 4; */
-        background-color:blue;
+        background-color:skyblue;
     }
     .first_of_month .mm  {
         font-weight:bold;
