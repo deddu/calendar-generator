@@ -12,11 +12,11 @@
 	<div>Calendar generator</div>
 	
 	<label>
-		<input type=date disabled bind:value={start}>
+		<input type=date bind:value={start}>
 		start
 	</label>
 	<label>
-		<input type=date disabled bind:value={end}>
+		<input type=date bind:value={end}>
 		end
 	</label>
 

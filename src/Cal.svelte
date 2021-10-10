@@ -9,20 +9,23 @@
     dayjs.extend(weekday);
     dayjs.extend(dayOfYear);
 
-    export let start='2021-01-01',end='2022-01-01', caltype='weekly';
+    export let start='2021-01-01', end='2022-01-01', caltype='weekly';
 
     let  s = dayjs(start);
     let e =  dayjs(end);
-    $: s = dayjs(start);
+    // let days, daysCount,weeksCount,monthsCount,paddeddays;
+    
+    $:  s = dayjs(start);
     $: e =  dayjs(end);
-    //start laying out days with a sunday/monday based on locale.
-    let pad = s.weekday();
-    let daysCount =  e.diff(s,'day');
-    let weeksCount = e.diff(s,'week');
-    let monthsCount = e.diff(s,'month');
-
-    let paddeddays = 'x'.repeat(daysCount+pad).split('').map((x,i)=>s.subtract(pad,'days').add(i,'days'));
-    let days = 'x'.repeat(daysCount).split('').map((x,i)=>s.add(i,'days'));
+        //start laying out days with a sunday/monday based on locale.
+    $: pad = s.weekday();
+    $: daysCount =  e.diff(s,'day');
+    $: weeksCount = e.diff(s,'week');
+    $: monthsCount = e.diff(s,'month');
+    $: paddeddays = daysCount>0 ? 'x'.repeat(daysCount+pad).split('').map((x,i)=>s.subtract(pad,'days').add(i,'days')):[];
+    $: days = daysCount>0? 'x'.repeat(daysCount).split('').map((x,i)=>s.add(i,'days')):[];
+    
+    
     const dow = {0:'sun',1:'mon',2:'tue',3:'wed',4:'thu',5:'fri',6:'sat'}
     const getDow = x => dow[x.day()];
     
